@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="shortify-index"),
-    path("url/<str:shortenUrl>/", views.url, name="shortenUrl"),
+    path("url/<str:shortedUrl>/", views.url, name="shortedUrl"),
 ]
