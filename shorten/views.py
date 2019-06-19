@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Shortify home page")
+    return render(request, "shorten/index.html")
 
 
 from .models import Url
