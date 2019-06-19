@@ -17,6 +17,9 @@ def url(request, shortedUrl):
 # RESTful API for using the database with javascript
 # Would be better for it to a new view than this one
 
+host = "http://127.0.0.1:8000"
+
+
 from django.core.validators import URLValidator
 from django.core.exceptions import ValidationError
 import random
@@ -41,7 +44,6 @@ def post(request):
 
     # Correct Format
     postDict = request.POST
-    print(postDict)
     if len(postDict) is not 1 or not "url" in postDict:
         response["message"] = "Invalid format of data; expected one key \'url\'"
         return JsonResponse(response)
@@ -59,14 +61,15 @@ def post(request):
     # Check if the url exists, if so don't create a new one, return the already existing
     existingSet = Url.objects.filter(url=postDict["url"])
     if len(existingSet) is not 0:
-        response["url"] = existingSet.first().shortenUrl
+        response["url"] = host + "/url/" + existingSet.first().shortenUrl
         return JsonResponse(response)
 
     # Create a new one
     i = random.randint(1,10)
-    newUrl = "http://127.0.0.1:8000/url/" + str(i)
+    newUrl = host + "/url/" + str(i)
     urlScheme = Url.objects.create(url=postDict["url"], shortenUrl=i) # do not consider local host to the database!
     response["url"] = newUrl
+    print(newUrl)
     return JsonResponse(response)
 
 def delete(request):
