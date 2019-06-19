@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-
+from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, HttpResponseRedirect
 # Create your views here.
 
@@ -21,11 +21,10 @@ def get(request):
     print(request.GET)
     return HttpResponse()
 
-
+@csrf_exempt
 def post(request):
-    print("POST REQUEST : ")
     print(request.POST)
-    return HttpResponse()
+    return HttpResponse("http:///.....")
 
 
 def delete(request):

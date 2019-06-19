@@ -1,4 +1,29 @@
 {% extends "shorten/template.html" %}
 {% block content %}
-	<h1>Main</h1>
+	<div class = "center-block">
+	<h1 style="text-align:center" id="shortify-title">Shortify</h1>
+	<p style="text-align:center">Quickly shorten your lengthy urls with shortify</p>
+	<div class = "row">
+		<form>
+			<input size="80" type="text" id="urlInput" name="urlInput" placeholder="Enter Link">
+		</form>
+		<button type="button" class="btn btn-primary" id="gen-link-btn">Generate Link</button>
+	</div>
+	<div class = "row">
+		<div class="url-error hide">
+			<p id="error-output"></p>
+		</div>
+		<div class="url-success hide">
+			<p id="success-output"></p>
+		</div>
+	</div>
+
+	</div>
 {% endblock content %}
+
+
+{% block outside-content %}
+	<div class="author-div">
+		<p>Created by <span style="font-weight:bold">Joshua Challenger</span> - <a href="https://github.com/Grandduchy">Grandduchy</a></p>
+	</div>
+{% endblock outside-content %}
