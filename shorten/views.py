@@ -65,7 +65,12 @@ def post(request):
         return JsonResponse(response)
 
     # Create a new one
-    i = random.randint(1,10)
+    i = 0;
+    for power in range(1,50): # Database can handle numbers up to 10^50
+        i = random.randint(1, 10**power)
+        numOfI = Url.objects.filter(shortenUrl = i).count()
+        if numOfI == 0:
+            break
     newUrl = host + "/url/" + str(i)
     urlScheme = Url.objects.create(url=postDict["url"], shortenUrl=i) # do not consider local host to the database!
     response["url"] = newUrl
