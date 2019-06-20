@@ -1,25 +1,19 @@
 {% extends "shorten/template.html" %}
 {% block content %}
 	<div class = "center-block">
-	<h1 style="text-align:center" id="shortify-title">Shortify</h1>
-	<p style="text-align:center">Quickly shorten your lengthy urls with shortify</p>
+	<h1 class="text-center" id="shortify-title">Shortify</h1>
+	<p class="text-center">Quickly shorten your lengthy urls with shortify</p>
 	<div class = "row">
 		<form>
 			<input size="80" type="text" id="urlInput" name="urlInput" placeholder="Enter Link">
 		</form>
 		<button type="button" class="btn btn-primary" id="gen-link-btn">Generate Link</button>
 	</div>
-	<div class = "row">
-		<div class="url-error hide">
-			<span style="text-align:center">
-			<p>An Error has Occured</p>
-			<p id="error-output"></p>
-			</span>
-		</div>
-		<div class="url-success hide">
-			<span style="text-align:center">
-			<p>Url successfully created, located at : </p>
-			<p id="success-output"></p>
+	<div class = "row" style="position:relative">
+		<div class="hide" id="url-result">
+			<span class="centered">
+			<p class="text-center" id="info-output"></p>
+			<p class="text-center" id="output"></p>
 			</span>
 		</div>
 	</div>

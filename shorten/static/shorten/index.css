@@ -34,3 +34,20 @@ body {
 .hide {
 	display: none;
 }
+
+.centered {
+	position:absolute;
+	right: 0px;
+	left: 0px;
+	bottom: 0px;
+	top: 0px;
+}
+
+.text-center {
+	text-align:center;
+}
+
+#info-output {
+	margin-top:10px;
+}
+

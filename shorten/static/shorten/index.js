@@ -1,22 +1,21 @@
 
 var internalServerError = function(jsonObj) {
-	if (!$(".url-success").hasClass("hide"))
-		$(".url-success").addClass("hide");
-	if ($(".url-error").hasClass("hide"))
-		$(".url-error").removeClass("hide");
+	if ($("#url-result").hasClass("hide"))
+		$("#url-result").removeClass("hide");
 
-	$("#error-output").empty();
-	$("#error-output").append(jsonObj["message"]);
+	$("#output").empty();
+	$("#output").append(jsonObj["message"]);
+	$("#info-output").empty();
+	$("#info-output").append("An Internal server error has occured : ");
 
 }
 
 var connectionError = function(errObj) {
-	if (!$(".url-success").hasClass("hide"))
-		$(".url-success").addClass("hide");
-	if ($(".url-error").hasClass("hide"))
-		$(".url-error").removeClass("hide");
+	if ($("#url-result").hasClass("hide"))
+		$("#url-result").removeClass("hide");
 
-	$("#error-output").empty();
+	$("#output").empty();
+	$("#info-output").empty();
 
 	var message;
 	if (errObj.responseText)
@@ -24,17 +23,18 @@ var connectionError = function(errObj) {
 	else
 		message = "Unkown error in connection to server";
 
-	$("#error-output").append(message);
+	$("#output").append(message);
+	$("#info-output").append("An error in connecting to the server occured : ");
 }
 
 var success = function(jsonObj) {
-	if (!$(".url-error").hasClass("hide"))
-		$(".url-error").addClass("hide");
-	if ($(".url-success").hasClass("hide"))
-		$(".url-success").removeClass("hide");
+	if ($("#url-result").hasClass("hide"))
+		$("#url-result").removeClass("hide");
 
-	$("#success-output").empty()
-	$("#success-output").append(jsonObj["url"]);
+	$("#output").empty();
+	$("#info-output").empty();
+	$("#output").append(jsonObj["url"]);
+	$("#info-output").append("Url successfully created, located at : ");
 }
 
 
