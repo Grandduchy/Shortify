@@ -12,6 +12,11 @@ body {
 	font-weight: "bold";
 }
 
+#title-info {
+	font-family:"Monospace";
+	margin-bottom:30px;
+}
+
 #urlInput {
 	margin-top: 2px;
 	margin-right: 25px;
@@ -47,7 +52,8 @@ body {
 	text-align:center;
 }
 
-#info-output {
-	margin-top:10px;
+#info-output, #output {
+	margin:20px;
+	font-family:"Monospace";
 }
 
