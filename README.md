@@ -44,8 +44,9 @@ The server now runs on http://127.0.0.1:8000/
 ## Built With
 
 * [Django](https://www.djangoproject.com/) - The web framework used
-* [JQuery](https://jquery.com/) - Javascript Library
-
+* [JQuery](https://jquery.com/) - Javascript Library used
+* [Bootstrap](https://getbootstrap.com/) - CSS Library used
+* [SQLite](https://www.sqlite.org/index.html) - Relational Database used
 ## Authors
 
 * **Joshua Challenger** - *Complete Project* - [Grandduchy](https://github.com/Grandduchy)
